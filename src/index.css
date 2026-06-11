@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@layer utilities {
+  /* Cute smooth fade animations for dialogs and slots */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0.9) rotate(-3deg); opacity: 0; }
+    70% { transform: scale(1.05) rotate(1deg); opacity: 0.9; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+
+  @keyframes floatSlow1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.15); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+
+  @keyframes floatSlow2 {
+    0%, 100% { transform: translate(0, 0) scale(1.1); }
+    50% { transform: translate(-40px, 40px) scale(0.85); }
+  }
+
+  @keyframes floatSlow3 {
+    0%, 100% { transform: translate(0, 0) scale(0.9); }
+    50% { transform: translate(50px, -30px) scale(1.2); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-out {
+    animation: fadeOut 0.2s ease-out forwards;
+  }
+
+  .animate-pop-in {
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  .animate-float-1 {
+    animation: floatSlow1 18s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: floatSlow2 22s ease-in-out infinite;
+  }
+
+  .animate-float-3 {
+    animation: floatSlow3 20s ease-in-out infinite;
+  }
+
+  /* Frosted Glass Utilities */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(142, 150, 165, 0.15);
+  }
+
+  .glass-contrast {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.08);
+  }
+
+  .glass-dark {
+    background: rgba(15, 15, 20, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-input {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .glass-input:focus {
+    background: rgba(255, 255, 255, 0.65);
+    border-color: rgba(244, 63, 94, 0.5); /* rose-500 edge info */
+    box-shadow: 0 0 12px rgba(244, 63, 94, 0.15);
+  }
+
+  .glass-button-active {
+    background: rgba(244, 63, 94, 0.82); /* Rose background */
+    color: white;
+    box-shadow: 0 4px 14px rgba(244, 63, 94, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-button-inactive {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #4b5563; /* text-stone-600 */
+    transition: all 0.2s ease;
+  }
+
+  .glass-button-inactive:hover {
+    background: rgba(255, 255, 255, 0.55);
+    color: #1f2937; /* text-stone-900 */
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+  }
+
+  /* Custom styling overrides for scrollbars across frames */
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 99px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  /* Looping infinite horizontal scrolling for photobooth hero background */
+  @keyframes cuteBgScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: -1920px 0; }
+  }
+
+  .animate-cute-bg-scroll {
+    animation: cuteBgScroll 60s linear infinite;
+    background-size: 1920px auto;
+    background-repeat: repeat-x;
+  }
+}
+

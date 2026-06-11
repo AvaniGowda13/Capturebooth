@@ -1,0 +1,8 @@
+{
+  "name": "Aesthetic Photobooth",
+  "description": "An elegant, mobile-friendly photobooth to create customized photo strips and single-photo layouts, choose beautiful custom frames, add personalized text, and generate high-resolution results for download and printing.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
